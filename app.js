@@ -20,6 +20,41 @@ function inserir(lg,sn,mail) {
     })
 }
 
-inserir("Cauã","12345","caua@gmail.com")
+
+//Selecionar dados por id - select nometabela
+function selectionPorId(id){
+    connection.query(sql,id,function(error,results,fields){
+
+    })
+}
+
+function selecionarTudo(){
+    let sql = "select * from users where id = ?"
+    connection.query(sql,function(error,results,fields){
+        for(let i=0;<results.lenght;i++) {
+
+        if(error) throw error
+        console.log("Selecionado:" + results[i].id + ":" + results [i].login + ":" + results[i].email)
+
+        }    
+    })
+}
+
+//Apagar dados -  delete from nometabela
+function apagar(id){
+    let sql = "delete from users where id = ?"
+    connection.query(sql,id,function(error,results,fields){
+        if (error) throw error
+        console.log("Apagado com sucesso!" + id)
+    }
+}
+
+
+selecionaPorId(12)
+
+
+
+
+//inserir("Cauã","12345","caua@gmail.com")
 
 connection.end()
