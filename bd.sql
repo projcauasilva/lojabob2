@@ -7,4 +7,7 @@ create table usuario(
     senha varchar(120) null,
     email varchar(120) null,
     primary key(id)
-)
+);
+
+use bob;
+select * from usuario;
